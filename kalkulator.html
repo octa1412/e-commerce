@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $("#reset").hide();
+                    
+                    $("#tambah").click(function(){                        
+                        $("button").fadeOut("slow");
+                        $(this).fadeIn();   
+                        var tam = parseInt($("#test1").val()) + parseInt($("#test2").val());
+                        $("#p1").text("value : " + $("#test1").val() + " " + $(this).val() + " " + $("#test2").val() + " = " + tam);                        
+                        $("#reset").fadeIn("slow");                        
+                    });
+                    
+                    $("#kurang").click(function(){                        
+                        $("button").fadeOut("slow");
+                        $(this).fadeIn();   
+                        var tam = parseInt($("#test1").val()) - parseInt($("#test2").val());
+                        $("#p1").text("value : " + $("#test1").val() + " " + $(this).val() + " " + $("#test2").val() + " = " + tam);                        
+                        $("#reset").fadeIn("slow");                        
+                    });
+                    
+                    $("#kali").click(function(){                        
+                        $("button").fadeOut("slow");
+                        $(this).fadeIn();   
+                        var tam = parseInt($("#test1").val()) * parseInt($("#test2").val());
+                        $("#p1").text("value : " + $("#test1").val() + " " + $(this).val() + " " + $("#test2").val() + " = " + tam);                        
+                        $("#reset").fadeIn("slow");                        
+                    });
+                    
+                    $("#bagi").click(function(){                        
+                        $("button").fadeOut("slow");
+                        $(this).fadeIn();   
+                        var tam = parseInt($("#test1").val()) / parseInt($("#test2").val());
+                        $("#p1").text("value : " + $("#test1").val() + " " + $(this).val() + " " + $("#test2").val() + " = " + tam);                        
+                        $("#reset").fadeIn("slow");                        
+                    });
+                    
+                    $("#reset").click(function() {
+                        $("#test1").val("");
+                        $("#test1").focus();                        
+                        $("#test2").val("");
+                        $("#p1").text("");
+                        $("button").fadeIn("slow");
+                        $("#reset").fadeOut();
+                        
+                    })
+                });
+            </script>
+            </head>
+            <body>
+                <h1>Calculator</h1>
+                <p>input 1: <input type="text" id="test1" value=""></p>
+                <p>input 2: <input type="text" id="test2" value=""></p>
+                
+                <button id="tambah" value="+">+</button>
+                <button id="kurang" value="-">-</button>
+                <button id="kali" value="x">x</button>
+                <button id="bagi" value="/">/</button>
+                <button id="reset">Reset</button>
+                
+                <p id="p1"></p>
+        </body>
+    </html>
